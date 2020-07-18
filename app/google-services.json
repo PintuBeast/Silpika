@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "877431114240",
+    "firebase_url": "https://silpikav2.firebaseio.com",
+    "project_id": "silpikav2",
+    "storage_bucket": "silpikav2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877431114240:android:6c0d004ae3ccb9d69926e5",
+        "android_client_info": {
+          "package_name": "com.example.silpika_v2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877431114240-acvuh6fd8a1ft0dehikkp5a6mncml24o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.silpika_v2",
+            "certificate_hash": "1c761131aa0efaab62b9a748d64558bdab95c596"
+          }
+        },
+        {
+          "client_id": "877431114240-t67c66p0a2kj2i99djdu1p1jvbn643ag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCubMHTxCgqhW9GMqFdY68ZX89s7tVg5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877431114240-t67c66p0a2kj2i99djdu1p1jvbn643ag.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
