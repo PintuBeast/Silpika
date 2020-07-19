@@ -66,7 +66,7 @@ public class instructor_login extends Fragment {
 
                                   @Override
                                   public void onClick(View v) {
-                                      Intent i=new Intent(getActivity().getApplicationContext(),instructor_signUp.class);
+                                      Intent i=new Intent(getActivity().getApplicationContext(),instructorSignUp.class);
                                       startActivity(i);
                                   }
                               }
@@ -127,7 +127,8 @@ public class instructor_login extends Fragment {
     private void updateUI(FirebaseUser currentUser) {
         if(currentUser!=null) {
             if(currentUser.isEmailVerified()) {
-                //startActivity(Intent(this, DashboardActivity::class.java));
+                Intent i=new Intent(getActivity().getApplicationContext(),courseActivity.class);
+                startActivity(i);
                 getActivity().finish();
             }
             else {
