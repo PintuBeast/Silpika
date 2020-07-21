@@ -1,6 +1,6 @@
 package com.example.silpika_v2;
 
-public class kuchipudi {
+public class vb {
 
     String id;
     String course;

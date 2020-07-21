@@ -8,7 +8,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -19,20 +21,31 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.File;
+public class viewCourse extends AppCompatActivity {
 
-public class instructor_login extends AppCompatActivity {
-private Uri videoUri;
-private static final int REQUEST_CODE=101;
-private StorageReference videoRef;
+    TextView text1,text2;
 
+    private Uri videoUri;
+    private static final int REQUEST_CODE=101;
+    private StorageReference videoRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        setContentView(R.layout.activity_view_course);
 
+        text1=findViewById(R.id.t1);
+        text2=findViewById(R.id.t2);
+
+        Intent i=getIntent();
+        String title=i.getStringExtra("title").toString();
+        String text=i.getStringExtra("text").toString();
+
+        text1.setText(title);
+        text2.setText(text);
+
+
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         StorageReference storageRef = FirebaseStorage.getInstance().getReference();
         videoRef = storageRef.child("/videos/" + uid + "/userIntro.3gp");
 
@@ -48,14 +61,14 @@ private StorageReference videoRef;
                 @Override
                 public void onFailure(@NonNull Exception exception) {
                     // Handle unsuccessful uploads
-                    Toast.makeText(instructor_login.this, "upload Failed"+exception.getLocalizedMessage(),
+                    Toast.makeText(viewCourse.this, "upload Failed"+exception.getLocalizedMessage(),
                             Toast.LENGTH_LONG).show();
                 }
             }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
-                    Toast.makeText(instructor_login.this, "upload complete",
+                    Toast.makeText(viewCourse.this, "upload complete",
                             Toast.LENGTH_LONG).show();
                 }
             }).addOnProgressListener(
@@ -69,35 +82,35 @@ private StorageReference videoRef;
         }
 
         else{
-            Toast.makeText(instructor_login.this, "Nothing to upload",
+            Toast.makeText(viewCourse.this, "Nothing to upload",
                     Toast.LENGTH_LONG).show();
         }
 
 
-        }
+    }
 
-       public void updateProgress(UploadTask.TaskSnapshot taskSnapshot) {
+    public void updateProgress(UploadTask.TaskSnapshot taskSnapshot) {
 
-    long filesize=taskSnapshot.getTotalByteCount();
-    long uploadBytes=taskSnapshot.getBytesTransferred();
-    long progress=100*uploadBytes/filesize;
-           ProgressBar progressBar=(ProgressBar) findViewById(R.id.pbar);
-           progressBar.setProgress( (int) progress );
-       }
+        long filesize=taskSnapshot.getTotalByteCount();
+        long uploadBytes=taskSnapshot.getBytesTransferred();
+        long progress=100*uploadBytes/filesize;
+        ProgressBar progressBar=(ProgressBar) findViewById(R.id.pbar);
+        progressBar.setProgress( (int) progress );
+    }
 
 
-       public void record (View view) {
+    public void record (View view) {
         Intent i=new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
         startActivityForResult(i, REQUEST_CODE);
-       }
+    }
 
 
-      // public void download (View view) {
+    // public void download (View view) {
 
-       // try{
+    // try{
 //            final File localFile= File.createTempFile("userIntro", "3gp");
 
-  //          videoRef.getFile(localFile).addOnSuccessListener(
+    //          videoRef.getFile(localFile).addOnSuccessListener(
 
 
     //        )
@@ -113,7 +126,7 @@ private StorageReference videoRef;
 
             if (resultCode==RESULT_OK) {
                 Toast.makeText(this, "Video saved to \n" +
-                           videoUri, Toast.LENGTH_LONG).show();
+                        videoUri, Toast.LENGTH_LONG).show();
             } else if (resultCode==RESULT_CANCELED) {
                 Toast.makeText(this, "Video recording cancelled",
                         Toast.LENGTH_LONG).show();
@@ -132,4 +145,12 @@ private StorageReference videoRef;
 
 
 }
+
+
+
+
+
+
+
+
 

@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -62,27 +62,27 @@ public class MainActivity extends AppCompatActivity {
 // fragment =null;
 
                    if (destination.getId() == R.id.nav_home) {
-                       Toast.makeText(MainActivity.this, "home", Toast.LENGTH_LONG).show();
+                       //Toast.makeText(MainActivity.this, "home", Toast.LENGTH_LONG).show();
                    }
                    if (destination.getId() == R.id.nav_gallery) {
-                       Toast.makeText(MainActivity.this, "nav_gallery",
-                               Toast.LENGTH_LONG).show();
+                     //  Toast.makeText(MainActivity.this, "nav_gallery",
+                       //        Toast.LENGTH_LONG).show();
                    }
                    if (destination.getId() == R.id.nav_slideshow) {
-                       Toast.makeText(MainActivity.this, "nav_slideshow",
-                               Toast.LENGTH_LONG).show();
+                     //  Toast.makeText(MainActivity.this, "nav_slideshow",
+                     //          Toast.LENGTH_LONG).show();
                    }
                    if (destination.getId() == R.id.nav_tools) {
                      //  fragment=new instructor_login();
-                       Toast.makeText(MainActivity.this, "nav_tools",
-                               Toast.LENGTH_LONG).show();
+                     //  Toast.makeText(MainActivity.this, "nav_tools",
+                       //        Toast.LENGTH_LONG).show();
                    }
                    if (destination.getId() == R.id.nav_share) {
                        //Toast.makeText(MainActivity.this, "nav_share",Toast.LENGTH_LONG).show();
                    }
                    if (destination.getId() == R.id.nav_send) {
-                       Toast.makeText(MainActivity.this, "nav_send",
-                               Toast.LENGTH_LONG).show();
+                     //  Toast.makeText(MainActivity.this, "nav_send",
+                      //         Toast.LENGTH_LONG).show();
                    }
 
                  //   if(fragment !=null) {
