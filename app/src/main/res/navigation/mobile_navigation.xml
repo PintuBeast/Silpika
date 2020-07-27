@@ -7,7 +7,7 @@
 
     <fragment
     android:id="@+id/nav_home"
-    android:name="com.example.silpika_v2.courseListFragment"
+    android:name="com.example.silpika_v2.artListFragment"
     android:label="Courses"
     tools:layout="@layout/fragment_home" />
 
@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.silpika_v2.courseFragment"
+        android:name="com.example.silpika_v2.artListFragment"
         android:label="Log out"
         tools:layout="@layout/fragment_slideshow" />
 

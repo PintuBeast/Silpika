@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".createVideoLesson"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:id="@+id/videoview_main"
+
+        android:backgroundTint="@android:color/white">
+    </VideoView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lesson Name"
+        android:id="@+id/video_name"
+        >
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="choose video"
+        android:onClick="ChooseVideo"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+
+    </TextView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="View Video Lessons"
+        android:onClick="ShowVideo"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+
+    </TextView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_upload_main"
+        android:text="upload"
+        android:layout_margin="20dp">
+
+    </Button>
+
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="true"
+        android:indeterminateTint="@android:color/holo_orange_dark"
+        android:id="@+id/progressbar_main"
+        >
+
+    </ProgressBar>
+</LinearLayout>

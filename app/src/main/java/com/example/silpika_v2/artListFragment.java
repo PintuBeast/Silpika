@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -18,7 +17,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class courseListFragment extends Fragment {
+public class artListFragment extends Fragment {
 
     ListView lst;
     ArrayList<String> titles=new ArrayList<String>();
@@ -30,7 +29,7 @@ public class courseListFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.course_list_fragment,null);
+        return inflater.inflate(R.layout.art_list_fragment,null);
     }
 
     @Override
@@ -204,7 +203,7 @@ lst.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 //        String ee=titles.get(position).toString();
 
        vb k2=obj1.get(position);
-       Intent i=new Intent(getActivity().getApplicationContext(),createLesson.class);
+       Intent i=new Intent(getActivity().getApplicationContext(),CourseList.class);
       i.putExtra("id",k2.id);
         i.putExtra("title",k2.title);
        // i.putExtra("text",k1.text);

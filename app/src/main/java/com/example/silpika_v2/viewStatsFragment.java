@@ -74,11 +74,11 @@ lst.setOnItemClickListener(new AdapterView.OnItemClickListener(){
         String ee=titles.get(position).toString();
 
         vb k=vbb.get(position);
-        Intent i=new Intent(getActivity().getApplicationContext(),createLesson.class);
-        i.putExtra("id",k.id);
-        i.putExtra("title",k.title);
-        i.putExtra("text",k.text);
-        startActivity(i);
+       // Intent i=new Intent(getActivity().getApplicationContext(),createLesson.class);
+      //  i.putExtra("id",k.id);
+      //  i.putExtra("title",k.title);
+      //  i.putExtra("text",k.text);
+      //  startActivity(i);
     }
 
 
