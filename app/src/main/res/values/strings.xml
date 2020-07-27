@@ -18,6 +18,12 @@
         <item>Kathak</item>
         <item>Kuchipudi</item>
         <item>Bharatnatyam</item>
+        <item>Kathakali</item>
+        <item>Odissi</item>
+        <item>Manipuri</item>
+        <item>Mohiniyattam</item>
+        <item>Sattriya</item>
     </string-array>
+
 
 </resources>

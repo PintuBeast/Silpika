@@ -6,4 +6,5 @@ public class vb {
     String course;
     String title;
     String text;
+
 }

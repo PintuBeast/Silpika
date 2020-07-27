@@ -19,8 +19,6 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.File;
-
 public class instructor_login extends AppCompatActivity {
 private Uri videoUri;
 private static final int REQUEST_CODE=101;
@@ -30,7 +28,7 @@ private StorageReference videoRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.instructor_main);
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         StorageReference storageRef = FirebaseStorage.getInstance().getReference();
