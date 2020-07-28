@@ -107,8 +107,6 @@ public class signIn extends AppCompatActivity {
 
                             Toast.makeText(signIn.this,"Login Failed!!",Toast.LENGTH_LONG).show();
                         }
-
-
                     }
                 });
 
@@ -134,7 +132,7 @@ public class signIn extends AppCompatActivity {
                     public void onSuccess(GetTokenResult result) {
 
 
-                        if (result.getClaims().get("isAdmin") != null) {
+                        if (result.getClaims().get("admin") != null) {
                             boolean isAdmin = (boolean) result.getClaims().get("admin"); // 2
                             if (isAdmin) { // 3
                                 // Show moderator UI
@@ -150,10 +148,6 @@ public class signIn extends AppCompatActivity {
                     }
                 });
 
-
-
-
-
             }
             else {
                 Toast.makeText(signIn.this,"Please verify Email!!",Toast.LENGTH_LONG).show();
@@ -164,21 +158,17 @@ public class signIn extends AppCompatActivity {
         }
     }
 
-
     private void showModeratorUI() {
         Intent i=new Intent(getApplicationContext(),InstructorMain.class);
         startActivity(i);
 
     }
 
-
     private void showRegularUI() {
-        Intent i=new Intent(getApplicationContext(),InstructorMain.class);
+        Intent i=new Intent(getApplicationContext(),StudentMain.class);
         startActivity(i);
 
     }
-
-
 
 
 }

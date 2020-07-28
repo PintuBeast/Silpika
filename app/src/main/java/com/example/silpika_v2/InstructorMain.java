@@ -38,7 +38,7 @@ public class InstructorMain extends AppCompatActivity {
         //        R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
         //        R.id.nav_tools, R.id.nav_share, R.id.nav_send)
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_gallery)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

@@ -47,48 +47,49 @@ public class StudentMain extends AppCompatActivity {
 
         //inserted code start
         navController.addOnDestinationChangedListener(new
-                                                              NavController.OnDestinationChangedListener() {
-                                                                  @Override
-                                                                  public void onDestinationChanged(@NonNull NavController controller,
-                                                                                                   @NonNull
-                                                                                                           NavDestination destination, @Nullable Bundle arguments) {
+                 NavController.OnDestinationChangedListener() {
+                @Override
+                    public void onDestinationChanged(@NonNull NavController controller,
+                    @NonNull
+                       NavDestination destination, @Nullable Bundle arguments) {
 // fragment =null;
 
-                                                                      if (destination.getId() == R.id.nav_home) {
-                                                                          //Toast.makeText(MainActivity.this, "home", Toast.LENGTH_LONG).show();
-                                                                      }
-                                                                      if (destination.getId() == R.id.nav_share) {
-                                                                          //  Toast.makeText(MainActivity.this, "nav_gallery",
-                                                                          //        Toast.LENGTH_LONG).show();
-                                                                      }
-                                                                      if (destination.getId() == R.id.nav_slideshow) {
-                                                                          //  Toast.makeText(MainActivity.this, "nav_slideshow",
-                                                                          //          Toast.LENGTH_LONG).show();
-                                                                      }
-                                                                      // if (destination.getId() == R.id.nav_tools) {
-                                                                      //  fragment=new instructor_login();
-                                                                      //  Toast.makeText(MainActivity.this, "nav_tools",
-                                                                      //        Toast.LENGTH_LONG).show();
-                                                                      // }
-                                                                      // if (destination.getId() == R.id.nav_share) {
-                                                                      //Toast.makeText(MainActivity.this, "nav_share",Toast.LENGTH_LONG).show();
-                                                                      //  }
-                                                                      //  if (destination.getId() == R.id.nav_send) {
-                                                                      //  Toast.makeText(MainActivity.this, "nav_send",
-                                                                      //         Toast.LENGTH_LONG).show();
-                                                                      //  }
 
-                                                                      //   if(fragment !=null) {
-                                                                      //     FragmentManager fragmentManager =getSupportFragmentManager();
-                                                                      //   FragmentTransaction ft= fragmentManager.beginTransaction();
+                      if (destination.getId() == R.id.nav_home) {
+                      //Toast.makeText(MainActivity.this, "home", Toast.LENGTH_LONG).show();
+                       }
+                        if (destination.getId() == R.id.nav_share) {
+                        //  Toast.makeText(MainActivity.this, "nav_gallery",
+                              //        Toast.LENGTH_LONG).show();
+                       }
+                        if (destination.getId() == R.id.nav_slideshow) {
+                      //  Toast.makeText(MainActivity.this, "nav_slideshow",
+                       //          Toast.LENGTH_LONG).show();
+                      }
+                   // if (destination.getId() == R.id.nav_tools) {
+                    //  fragment=new instructor_login();
+                      //  Toast.makeText(MainActivity.this, "nav_tools",
+                    //        Toast.LENGTH_LONG).show();
+                   // }
+                    // if (destination.getId() == R.id.nav_share) {
+                   //Toast.makeText(MainActivity.this, "nav_share",Toast.LENGTH_LONG).show();
+                //  }
+                  //  if (destination.getId() == R.id.nav_send) {
+                  //  Toast.makeText(MainActivity.this, "nav_send",
+                   //         Toast.LENGTH_LONG).show();
+                  //  }
 
-                                                                      // ft.replace(R.id.area,fragment);
-                                                                      // ft.commit();
+             //   if(fragment !=null) {
+              //     FragmentManager fragmentManager =getSupportFragmentManager();
+             //   FragmentTransaction ft= fragmentManager.beginTransaction();
 
-                                                                      //  }
+                 // ft.replace(R.id.area,fragment);
+             // ft.commit();
 
-                                                                  }
-                                                              });
+               //  }
+
+               }
+             });
 
         //inserted code end
     }

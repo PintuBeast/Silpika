@@ -3,6 +3,7 @@ package com.example.silpika_v2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -34,7 +35,7 @@ public class signUp extends AppCompatActivity {
     private FirebaseFunctions mFunctions;
 
     EditText ed1, ed2;
-    Button b1;
+    Button b1,b2;
 
 
     @Override
@@ -47,20 +48,30 @@ public class signUp extends AppCompatActivity {
 
         ed1 = (EditText) findViewById(R.id.tv_username);
         ed2 = (EditText) findViewById(R.id.tv_password);
-        b1 = (Button) findViewById(R.id.btn_signup);
+        b1 = (Button) findViewById(R.id.btn_signup_Instructor);
+        b2 = (Button) findViewById(R.id.btn_signup_Student);
 
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                signUpUser();
+                signUpUser(true);
+            }
+        });
+
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                signUpUser(false);
             }
         });
 
     }
 
-    public void signUpUser() {
+    public void signUpUser(Boolean isTeacher) {
 
         final String username=ed1.getText().toString();
         String password=ed2.getText().toString();
@@ -106,9 +117,17 @@ public class signUp extends AppCompatActivity {
                                                     @Override
                                                     public void onComplete(@NonNull Task<Void> task) {
                                                         if (task.isSuccessful()) {
-                                                            //callCloudFunction(userF);
+                                                            if (isTeacher)
+                                                            {  callCloudFunction(username);
+                                                                Toast.makeText(signUp.this,"Teacher Account created!",Toast.LENGTH_LONG).show();
+                                                            }
 
-                                                            Toast.makeText(signUp.this,"Teacher Account created!",Toast.LENGTH_LONG).show();
+                                                            else
+                                                            {
+                                                                Toast.makeText(signUp.this,"Student Account created!",Toast.LENGTH_LONG).show();
+                                                            }
+
+
 
 
                                                         }
@@ -142,14 +161,20 @@ public class signUp extends AppCompatActivity {
 
     }
 
-    private Task<String> callCloudFunction (FirebaseUser user) {
+    private Task<String> callCloudFunction (String username) {
+
+//        String username=ed1.getText().toString();
+
         FirebaseFunctions mFunctions = FirebaseFunctions.getInstance();
         Map<String, Object> data = new HashMap<>();
-        data.put("randomword", true);
+
+        data.put("text", username);
+        data.put("push", true);
+
 
         return mFunctions
                 //.getHttpsCallable("helloWorldCloudFunction")
-                .getHttpsCallable("helloWorldCloudFunction")
+                .getHttpsCallable("addAdminRole")
                 .call(data)
                 .continueWith(new Continuation<HttpsCallableResult, String>() {
                     @Override
@@ -157,12 +182,12 @@ public class signUp extends AppCompatActivity {
                         // This continuation runs on either success or failure, but if the task
                         // has failed then getResult() will throw an Exception which will be
                         // propagated down.
+                        Log.d("addAdmin",(String) task.getResult().getData());
                         return (String) task.getResult().getData();
                     }
                 });
 
     }
-
 
 
 
