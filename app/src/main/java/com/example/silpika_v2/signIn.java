@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 
 import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -126,7 +128,8 @@ public class signIn extends AppCompatActivity {
 
 
             if(currentUser.isEmailVerified()) {
-                currentUser.getIdToken(true);
+              //  currentUser.getIdToken(true);
+               Log.d("Token", currentUser.getEmail());
                 currentUser.getIdToken(true).addOnSuccessListener(new OnSuccessListener<GetTokenResult>() { // 1
                     @Override
                     public void onSuccess(GetTokenResult result) {
@@ -147,6 +150,15 @@ public class signIn extends AppCompatActivity {
                         }
                     }
                 });
+
+                currentUser.getIdToken(true).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("Special",e.getMessage());
+                    }
+                });
+
+
 
             }
             else {

@@ -24,7 +24,7 @@
 
         <com.google.android.exoplayer2.ui.PlayerView
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="400dp"
             android:id="@+id/exoplayer_item"
             android:layout_margin="3dp"
             app:resize_mode="fill"

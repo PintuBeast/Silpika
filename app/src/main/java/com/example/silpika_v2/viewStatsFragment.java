@@ -50,7 +50,7 @@ if(c.moveToFirst()) {
   do{
       vb k=new vb();
       k.id=c.getString(id);
-      k.title=c.getString(title);
+      k.artName=c.getString(title);
       k.text=c.getString(text);
 
       vbb.add(k);

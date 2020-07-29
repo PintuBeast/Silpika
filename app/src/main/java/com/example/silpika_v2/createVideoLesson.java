@@ -22,6 +22,8 @@ import android.widget.VideoView;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -42,6 +44,8 @@ public class createVideoLesson extends AppCompatActivity {
     Member member;
     UploadTask uploadTask;
 
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +56,20 @@ public class createVideoLesson extends AppCompatActivity {
         member=new Member();
         progressBar=findViewById(R.id.progressbar_main);
 
-        storageReference= FirebaseStorage.getInstance().getReference("Video");
-        databaseReference= FirebaseDatabase.getInstance().getReference("Video");
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String uid=user.getUid();
+
+
+        Intent i=getIntent();
+
+        String level=i.getStringExtra("levelName").toString();
+        String art=i.getStringExtra("artName").toString();
+        //String text=i.getStringExtra("text").toString();
+
+
+        storageReference= FirebaseStorage.getInstance().getReference("Video/"+art+"/"+level);
+        databaseReference= FirebaseDatabase.getInstance().getReference("Video/"+art+"/"+level);
 
         mediaController=new MediaController(this);
         videoView.setMediaController(mediaController);
@@ -80,6 +96,9 @@ public class createVideoLesson extends AppCompatActivity {
     }
 
     public void ChooseVideo(View view) {
+
+
+
         Intent intent =new Intent();
         intent.setType("video/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
@@ -93,13 +112,26 @@ public class createVideoLesson extends AppCompatActivity {
     }
 
     public void ShowVideo(View view) {
+
+        Intent i=getIntent();
+        String level=i.getStringExtra("levelName").toString();
+        String art=i.getStringExtra("artName").toString();
+
         Intent intent=new Intent(createVideoLesson.this, VideoList.class);
+       // intent.putExtra("id",k.id);
+        intent.putExtra("artName",art);
+        intent.putExtra("levelName",level);
+        //intent.putExtra("text",k.text);
         startActivity(intent);
     }
 
     private void UploadVideo() {
         final String videoName=editText.getText().toString();
         final String search=editText.getText().toString().toLowerCase();
+
+        FirebaseUser user = mAuth.getCurrentUser();
+       String uid=user.getUid();
+
         if (videoUri !=null || !TextUtils.isEmpty(videoName)) {
             progressBar.setVisibility(View.VISIBLE);
             final StorageReference reference= storageReference.child(System.currentTimeMillis()+"."+getExtension(videoUri));
@@ -127,6 +159,7 @@ public class createVideoLesson extends AppCompatActivity {
                         member.setName(videoName);
                         member.setVideoUrl(downloadUrl.toString());
                         member.setSearch(search);
+                        member.setUid(uid);
                         String i=databaseReference.push().getKey();
                         databaseReference.child(i).setValue(member);
 

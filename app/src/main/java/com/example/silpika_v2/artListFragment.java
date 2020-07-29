@@ -72,120 +72,120 @@ final ArrayList<vb> obj1 =new ArrayList<vb>();
       art k=new art();
       vb k1=new vb();
         k.id="0";
-        k.title="Kathak";
+        k.artName ="Kathak";
         k.courseCount="5";
         k.imageUri=" ";
 
         k1.id="0";
-        k1.title="Kathak";
+        k1.artName="Kathak";
 
 
         obj1.add(k1);
 
-        titles.add(k.title);
+        titles.add(k.artName);
 
 
         //Art 2
         vb k1a=new vb();
         k.id="1";
-        k.title="Kuchipudi";
+        k.artName="Kuchipudi";
         k.courseCount="5";
         k.imageUri=" ";
 
 
 
         k1a.id="1";
-        k1a.title="Kuchipudi";
+        k1a.artName="Kuchipudi";
 
 
         obj1.add(k1a);
-        titles.add(k.title);
+        titles.add( k.artName);
 
         //Art 3
 
         k.id="2";
-        k.title="BharatNatyam";
+        k.artName="BharatNatyam";
         k.courseCount="5";
         k.imageUri=" ";
 
         vb k1b=new vb();
         k1b.id="2";
-        k1b.title="BharatNatyam";
+        k1b.artName="BharatNatyam";
         obj1.add(k1b);
 
-        titles.add(k.title);
+        titles.add( k.artName);
 
         //Art4
 
         k.id="3";
-        k.title="Odissi";
+        k.artName="Odissi";
         k.courseCount="5";
         k.imageUri=" ";
 
         vb k1c=new vb();
         k1c.id="3";
-        k1c.title="Odissi";
+        k1c.artName="Odissi";
         obj1.add(k1c);
 
-        titles.add(k.title);
+        titles.add( k.artName);
 
         //Art5
 
         k.id="4";
-        k.title="Kathakali";
+        k.artName="Kathakali";
         k.courseCount="5";
         k.imageUri=" ";
 
         vb k1d=new vb();
         k1d.id="4";
-        k1d.title="Kathakali";
+        k1d.artName="Kathakali";
         obj1.add(k1d);
 
-        titles.add(k.title);
+        titles.add( k.artName);
 
         //Art6
 
         k.id="5";
-        k.title="Sattriya";
+        k.artName="Sattriya";
         k.courseCount="5";
         k.imageUri=" ";
 
         vb k1e=new vb();
         k1e.id="5";
-        k1e.title="Sattriya";
+        k1e.artName="Sattriya";
         obj1.add(k1e);
 
-        titles.add(k.title);
+        titles.add( k.artName);
 
 
 
         //Art7
 
         k.id="6";
-        k.title="Manipuri";
+        k.artName="Manipuri";
         k.courseCount="5";
         k.imageUri=" ";
 
         vb k1f=new vb();
         k1f.id="6";
-        k1f.title="Manipuri";
+        k1f.artName="Manipuri";
         obj1.add(k1f);
 
-        titles.add(k.title);
+        titles.add( k.artName);
 
         //Art8
 
         k.id="7";
-        k.title="Mohiniyattam";
+        k.artName="Mohiniyattam";
         k.courseCount="5";
         k.imageUri=" ";
 
         vb k1g=new vb();
         k1g.id="7";
-        k1g.title="Mohiniyattam";
+        k1g.artName="Mohiniyattam";
 
         obj1.add(k1g);
-        titles.add(k.title);
+        titles.add( k.artName);
 
 
 
@@ -205,7 +205,7 @@ lst.setOnItemClickListener(new AdapterView.OnItemClickListener(){
        vb k2=obj1.get(position);
        Intent i=new Intent(getActivity().getApplicationContext(),CourseList.class);
       i.putExtra("id",k2.id);
-        i.putExtra("title",k2.title);
+        i.putExtra("title",k2.artName);
        // i.putExtra("text",k1.text);
         startActivity(i);
     }

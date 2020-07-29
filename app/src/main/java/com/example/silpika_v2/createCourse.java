@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class createCourse extends AppCompatActivity {
 EditText ed1, ed2;
-Spinner spinner;
+Spinner spinner,spinner_level;
 Button b1, b2;
 
 
@@ -35,7 +35,7 @@ Button b1, b2;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_course);
         spinner=findViewById(R.id.courseName);
-        ed1=findViewById(R.id.courseTitle);
+        spinner_level=findViewById(R.id.courseTitle);
         ed2=findViewById(R.id.courseText);
         b1=findViewById(R.id.btn_courseCreate);
         b2=findViewById(R.id.btn_courseCancel);
@@ -67,7 +67,7 @@ Button b1, b2;
 
         try {
             String course = spinner.getSelectedItem().toString();
-            String title = ed1.getText().toString();
+            String title = spinner_level.getSelectedItem().toString();
             String text = ed2.getText().toString();
 
             SQLiteDatabase db = openOrCreateDatabase("SILPIKA", Context.MODE_PRIVATE, null);

@@ -33,11 +33,16 @@ public class VideoList extends AppCompatActivity {
         setContentView(R.layout.activity_video_list);
 
 
+        Intent i=getIntent();
+        String level=i.getStringExtra("levelName").toString();
+        String art=i.getStringExtra("artName").toString();
+
+
         recyclerView=findViewById(R.id.recyclerview_showVideo);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         database= FirebaseDatabase.getInstance();
-        databaseReference= database.getReference("Video");
+        databaseReference= database.getReference("Video/"+art+"/"+level);
 
        // btnCreate=findViewById(R.id.createVideoLesson);
 

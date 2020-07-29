@@ -23,19 +23,21 @@
             />
         <Spinner
             android:id="@+id/courseName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Course Name"
             android:entries="@array/courses"
             />
 
-        <EditText
+        <Spinner
             android:id="@+id/courseTitle"
             android:layout_width="match_parent"
             android:layout_marginTop="16dp"
             android:layout_height="wrap_content"
-            android:hint="Title"
+            android:hint="Level"
+            android:entries="@array/levels"
+
 
             />
 

@@ -5,6 +5,7 @@ public class Member {
     private String name;
     private String videoUrl;
     private String search;
+    private String uid;
     public Member()
     {
 
@@ -32,5 +33,13 @@ public class Member {
 
     public void setSearch(String search) {
         this.search = search;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

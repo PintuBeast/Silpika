@@ -25,5 +25,11 @@
         <item>Sattriya</item>
     </string-array>
 
+    <string-array name="levels">
+        <item>Beginer</item>
+        <item>Intermediate</item>
+        <item>Advanced</item>
+
+    </string-array>
 
 </resources>
