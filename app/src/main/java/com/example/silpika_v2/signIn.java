@@ -40,7 +40,17 @@ public class signIn extends AppCompatActivity {
 
 
     EditText ed1, ed2;
+
     Button b1,b2;
+
+
+    public interface MyCallback {
+        // Declaration of the template function for the interface
+        public void updateMyText(String myString);
+    }
+
+
+
 
 
     @Override
@@ -48,6 +58,8 @@ public class signIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
         mAuth = FirebaseAuth.getInstance();
+
+
 
         ed1=(EditText)findViewById(R.id.tv_username);
         ed2=(EditText)findViewById(R.id.tv_password);
@@ -130,9 +142,15 @@ public class signIn extends AppCompatActivity {
             if(currentUser.isEmailVerified()) {
               //  currentUser.getIdToken(true);
                Log.d("Token", currentUser.getEmail());
+
+
+
+
                 currentUser.getIdToken(true).addOnSuccessListener(new OnSuccessListener<GetTokenResult>() { // 1
                     @Override
                     public void onSuccess(GetTokenResult result) {
+
+
 
 
                         if (result.getClaims().get("admin") != null) {
@@ -165,9 +183,9 @@ public class signIn extends AppCompatActivity {
                 Toast.makeText(signIn.this,"Please verify Email!!",Toast.LENGTH_LONG).show();
             }
         }
-        else {
-            Toast.makeText(signIn.this,"Authentication Failed!!",Toast.LENGTH_LONG).show();
-        }
+       // else {
+       //     Toast.makeText(signIn.this,"Authentication Failed!!",Toast.LENGTH_LONG).show();
+       // }
     }
 
     private void showModeratorUI() {

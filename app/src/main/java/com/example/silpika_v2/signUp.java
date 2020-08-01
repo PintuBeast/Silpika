@@ -150,7 +150,7 @@ public class signUp extends AppCompatActivity {
 
                         } else {
 
-                            Toast.makeText(signUp.this,"Authentication Failed!!", Toast.LENGTH_LONG).show();
+                           // Toast.makeText(signUp.this,"Authentication Failed!!", Toast.LENGTH_LONG).show();
                             updateUI(null);
 
                         }
@@ -208,7 +208,7 @@ public class signUp extends AppCompatActivity {
                 Toast.makeText(signUp.this, "Please verify Email!!", Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(signUp.this, "Authentication Failed!!", Toast.LENGTH_LONG).show();
+           // Toast.makeText(signUp.this, "Authentication Failed!!", Toast.LENGTH_LONG).show();
         }
 
 

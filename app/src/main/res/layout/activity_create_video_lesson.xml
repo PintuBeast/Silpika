@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".createVideoLesson"
     android:orientation="vertical"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    android:theme="@style/AppTheme.MyActionBar">
 
     <VideoView
         android:layout_width="match_parent"
@@ -17,10 +18,12 @@
     </VideoView>
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Lesson Name"
+        android:hint="Enter Lesson Name"
+        android:gravity="center"
         android:id="@+id/video_name"
+        android:layout_gravity="center"
         >
     </EditText>
 

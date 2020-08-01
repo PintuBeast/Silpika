@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -13,8 +14,45 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.MyActionBar">
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+        <item name="colorPrimary">#F6A6A6</item>
+        <item name="titleTextColor">#191717</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay1" parent="@style/AppTheme.MyActionBar">
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    </style>
+
+
+    <style name="AppTheme.MyPopup">
+        <item name="colorPrimary">#E8D9D9</item>
+
+    </style>
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="InvitationDialog"
+        parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/grey</item>
+        <item name="android:textColorPrimary">#E8D9D9</item>
+        <item name="android:editTextColor">#191717</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+
+
+
+
+
+
 
 </resources>

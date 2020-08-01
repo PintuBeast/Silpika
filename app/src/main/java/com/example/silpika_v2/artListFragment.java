@@ -37,16 +37,16 @@ public class artListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-       btnCreate=view.findViewById(R.id.create);
+     //  btnCreate=view.findViewById(R.id.create);
 
-        btnCreate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(getActivity(),createCourse.class);
-                startActivity(i);
+       // btnCreate.setOnClickListener(new View.OnClickListener() {
+         //   @Override
+         //   public void onClick(View v) {
+         //       Intent i=new Intent(getActivity(),createCourse.class);
+         //       startActivity(i);
 
-            }
-        });
+        //    }
+       //   });
 
 
 

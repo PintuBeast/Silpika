@@ -3,11 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
 
-    <ListView
-        android:id="@+id/lst1"
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Page under maintenance"
+        android:textColor="@color/red"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 </LinearLayout>

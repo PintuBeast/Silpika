@@ -11,6 +11,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -18,16 +20,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.TextView;
 
 public class StudentMain extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+     //   Toolbar toolbar = findViewById(R.id.toolbar);
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -62,10 +66,10 @@ public class StudentMain extends AppCompatActivity {
                         //  Toast.makeText(MainActivity.this, "nav_gallery",
                               //        Toast.LENGTH_LONG).show();
                        }
-                        if (destination.getId() == R.id.nav_slideshow) {
+                      //  if (destination.getId() == R.id.nav_slideshow) {
                       //  Toast.makeText(MainActivity.this, "nav_slideshow",
                        //          Toast.LENGTH_LONG).show();
-                      }
+                     // }
                    // if (destination.getId() == R.id.nav_tools) {
                     //  fragment=new instructor_login();
                       //  Toast.makeText(MainActivity.this, "nav_tools",
@@ -104,6 +108,10 @@ public class StudentMain extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        ((TextView)findViewById(R.id.disp_username1)).setText( currentUser.getEmail());
+
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
